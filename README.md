@@ -25,3 +25,7 @@ This is a simple `Makefile` and `Helm` values file that deploys [Gitlab Official
   ```
   make get_login_info
   ```
+- Destroy your gitlab setup
+  ```
+  make destroy
+  ```
