@@ -12,7 +12,7 @@ install:
 	@echo "Installing Gitlab Helm Chart..."
 	helm repo add gitlab https://charts.gitlab.io/
 	helm repo update
-	helm upgrade --install ${RELEASE_NAME} gitlab/gitlab --timeout 600s --set global.hosts.domain=${MINIKUBE_IP}.nip.io --set global.hosts.externalIP=${MINIKUBE_IP} -f ./values-minikube.yaml
+	helm upgrade --install ${RELEASE_NAME} gitlab/gitlab --wait --timeout 600s --set global.hosts.domain=${MINIKUBE_IP}.nip.io --set global.hosts.externalIP=${MINIKUBE_IP} -f ./values-minikube.yaml
 
 get_login_info:
 	@echo -n "Gitlab URL is: "
