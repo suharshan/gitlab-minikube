@@ -20,3 +20,7 @@ get_login_info:
 	@echo ""
 	@echo -n "Password for root user is: "
 	@kubectl get secret ${RELEASE_NAME}-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo
+
+destroy:
+	@echo "Destroying your Gitlab..."
+	@helm uninstall gitlab
