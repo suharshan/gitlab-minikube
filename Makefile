@@ -24,3 +24,5 @@ get_login_info:
 destroy:
 	@echo "Destroying your Gitlab..."
 	@helm uninstall gitlab
+	# Delete PVs and PVCs to avoid any postgresql complications when re-creating the stack
+	@kubectl delete pvc,pv --all
